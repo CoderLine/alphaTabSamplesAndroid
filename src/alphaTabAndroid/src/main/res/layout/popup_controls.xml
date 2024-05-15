@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:ignore="HardcodedText"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <HorizontalScrollView
+        android:id="@+id/buttons"
+        android:layout_width="match_parent"
+        android:background="@color/design_default_color_background"
+        android:layout_alignParentStart="true"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_vertical"
+            android:padding="4dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/back"
+                style="@style/PopupButton"
+                app:icon="@drawable/baseline_arrow_back_48"
+                app:iconSize="48dp"
+                app:iconGravity="textStart"
+                app:iconTint="@color/black"
+                android:layout_marginHorizontal="8dp"
+                android:padding="0dp"
+                app:backgroundTint="@android:color/transparent"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/openFile"
+                style="@style/PopupButton"
+                app:icon="@drawable/baseline_file_open_24"
+                android:text="Open File" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/countIn"
+                style="@style/PopupButton"
+                android:checkable="true"
+                app:icon="@drawable/baseline_hourglass_empty_24"
+                android:text="Count-In" />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/PopupButton"
+                android:checkable="true"
+                android:id="@+id/metronome"
+                app:icon="@drawable/baseline_edit_square_24"
+                android:text="Metronome"/>
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/PopupButton"
+                android:checkable="true"
+                android:id="@+id/looping"
+                app:icon="@drawable/baseline_repeat_24"
+                android:text="Looping" />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/PopupButton"
+                android:id="@+id/zoom"
+                app:icon="@drawable/baseline_zoom_in_24"
+                android:text="Zoom" />
+
+            <com.google.android.material.button.MaterialButton
+                style="@style/PopupButton"
+                android:id="@+id/layout"
+                app:icon="@drawable/baseline_view_quilt_24"
+                android:text="Layout" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <ListView
+        android:id="@+id/trackList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/buttons"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="-12dp"
+        android:layout_marginTop="-4dp"
+        android:layout_marginBottom="3dp"
+        android:background="@color/design_default_color_background">
+
+    </ListView>
+
+</RelativeLayout>

@@ -1,25 +1,22 @@
 plugins {
-    id("com.android.application")
-    kotlin("android")
-}
-
-dependencies {
-    implementation("com.google.android.material:material:1.5.0")
-    implementation("androidx.appcompat:appcompat:1.4.1")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.3")
-    implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
-    implementation("net.alphatab:alphaTab-android:1.3.0-SNAPSHOT")
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.jetbrains.kotlin.android)
 }
 
 android {
-    compileSdk = 31
+    namespace = "net.alphatab.android.sample"
+    compileSdk = 34
+
     defaultConfig {
-        applicationId = "net.alphatab.android"
-        minSdk = 24
-        targetSdk = 31
+        applicationId = "net.alphatab.android.sample"
+        minSdk = 26
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
+
     signingConfigs {
         getByName("debug") {
             keyAlias = "key0"
@@ -36,13 +33,40 @@ android {
     }
 
     buildTypes {
-        getByName("debug") {
+        debug {
             isMinifyEnabled = false
             signingConfig = signingConfigs.getByName("debug")
         }
-        getByName("release") {
+
+        release {
+            isMinifyEnabled = false
             signingConfig = signingConfigs.getByName("release")
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+    packaging {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
 }
 
+dependencies {
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+    implementation(libs.androidx.activity)
+    implementation(libs.androidx.constraintlayout)
+    implementation(libs.alphatab)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+}

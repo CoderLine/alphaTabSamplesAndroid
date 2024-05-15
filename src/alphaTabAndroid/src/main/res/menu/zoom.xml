@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:ignore="HardcodedText" >
+    <item android:title="25%" />
+    <item android:title="50%" />
+    <item android:title="75%" />
+    <item android:title="90%" />
+    <item android:title="100%" />
+    <item android:title="110%" />
+    <item android:title="125%" />
+    <item android:title="150%" />
+    <item android:title="200%" />
+</menu>
