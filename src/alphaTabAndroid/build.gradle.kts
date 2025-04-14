@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "net.alphatab.android.sample"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "net.alphatab.android.sample"
-        minSdk = 26
-        targetSdk = 34
+        minSdk = 27
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -69,4 +69,9 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    configurations.all {
+        // Don't cache changing modules at all.
+        resolutionStrategy.cacheChangingModulesFor(0, TimeUnit.SECONDS)
+    }
 }

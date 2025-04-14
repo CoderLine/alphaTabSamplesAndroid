@@ -25,6 +25,7 @@ class MainViewModel  : ViewModel() {
             this.player.enableUserInteraction = true
             this.display.barCountPerPartial = 4.0
             this.display.resources.barNumberFont
+            this.core.engine = "skia"
         }
     }
 }
